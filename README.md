@@ -27,3 +27,12 @@ String koneksi "amqp://guest:guest@localhost:5672" adalah URI (Uniform Resource 
 ![/simulation-slow-subscriber](./images/simulation-slow-subscriber.jpg)
 
 Jumlah antrean (queue) yang terlihat sebagai 2 pada tampilan RabbitMQ tersebut disebabkan karena dalam sistem terdapat dua antrean yang telah dibuat dan masih aktif. Hal ini bisa terjadi, misalnya, jika pada saat pengujian atau simulasi dilakukan pembuatan dua antrean berbeda—baik secara eksplisit oleh aplikasi publisher atau karena subscriber terhubung ke antrean berbeda. Jumlah ini tidak menunjukkan jumlah pesan, melainkan jumlah antrean yang ada di dalam broker RabbitMQ saat ini, terlepas dari apakah antrean tersebut sedang kosong atau terisi.
+
+---
+
+## Running at least three subscribers
+
+![/running-three-subscribers](./images/subscriber-RabbitMQ.jpg)
+![/running-three-subscribers](./images/subscriber-terminal.jpg)
+
+Terlihat pada gambar pertama bahwa grafik queue memiliki kecepatan yang lebih tinggi ketika terdapat 3 subscriber yang menerima pesan. Lalu, jumlah pesan dalam antrian secara signifikan berkurang. Sementara itu, pada gambar kedua, message broker berhasil membagikan pesan-pesan yang berbeda-beda ke ketiga subscriber dan pesan yang telah diambil akan dihilangkan dari antrian.
